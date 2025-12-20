@@ -1,0 +1,945 @@
+/* --- SCROLLBAR STYLE FOR A CLEANER LOOK --- */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* --- 1. Global Reset, Variables & Typography --- */
+:root {
+    --primary-color: #FF9800; /* Bright Orange for energy/sun */
+    --secondary-color: #00796b; /* Teal/Dark Green for environment/trust */
+    --text-color: #333;
+    --light-bg: #f7f7f7;
+    --dark-bg: #263238; /* Dark Slate for depth */
+    --max-width: 1280px;
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: auto;
+    overflow: hidden;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+/* --- 2. Headings & Titles --- */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    margin-bottom: 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+.page-title {
+    font-size: 3em;
+    color: var(--secondary-color);
+}
+.subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    color: #777;
+    margin-bottom: 50px;
+}
+
+/* --- 3. Header & Navigation --- */
+header {
+    background: #fff;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a:not(.btn) {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* --- 4. Buttons (More Defined) --- */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: transform 0.3s, background-color 0.3s;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.primary-btn-lg {
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    padding: 15px 40px;
+    font-size: 1.1em;
+}
+
+.primary-btn-sm {
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    padding: 8px 18px;
+    margin-left: 15px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.text-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+.text-link:hover {
+    color: var(--primary-color);
+}
+
+
+/* --- 5. Hero Section (New Look) --- */
+.hero-new {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('solar-panels-wide.jpg') no-repeat center center/cover; /* REPLACE with your own image */
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero-content-new {
+    z-index: 10;
+    max-width: 650px;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.hero-content-new h1 {
+    font-size: 3.8em;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.hero-content-new p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* --- 6. Services Preview Grid (Image Cards) --- */
+.service-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding-bottom: 25px;
+}
+
+.card-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: var(--secondary-color);
+    font-size: 1.5em;
+    padding: 0 20px;
+}
+
+.service-card p {
+    padding: 0 20px 20px;
+}
+
+/* --- 7. Trust Grid (Why Choose Us) --- */
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.trust-item {
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+}
+
+.trust-item:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.trust-item i {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.trust-item h4 {
+    color: var(--dark-bg);
+}
+
+
+/* --- 8. Contact Section & Form (Two Columns) --- */
+.bg-dark {
+    background: var(--dark-bg);
+    color: #fff;
+}
+.bg-dark h2 {
+    color: #fff;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Form is wider than map */
+    gap: 50px;
+    text-align: left;
+}
+
+.contact-form-area input[type="text"],
+.contact-form-area input[type="email"],
+.contact-form-area input[type="tel"],
+.contact-form-area textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+    background: #444;
+    color: #fff;
+    font-size: 1em;
+}
+
+.contact-form-area textarea {
+    resize: vertical;
+}
+
+.contact-form-area .primary-btn-lg {
+    width: 100%;
+    text-align: center;
+}
+
+.map-placeholder {
+    height: 350px;
+    background: #444;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures map iframe fits borders */
+}
+
+.address-text {
+    margin-top: 15px;
+    color: #ccc;
+    font-size: 0.9em;
+}
+
+/* --- 9. Footer --- */
+footer {
+    background: #1a1a1a;
+    color: #ccc;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.social-links a {
+    font-size: 1.2em;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- 10. Services Page Specific Styles (For services-full.html) --- */
+
+.service-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.reverse-grid {
+    grid-template-areas: "image text";
+}
+.reverse-grid .service-image-container {
+    grid-area: image;
+}
+.reverse-grid .service-text {
+    grid-area: text;
+}
+
+.block-title {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.full-width-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.check-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+.check-list li {
+    padding: 8px 0;
+    font-size: 1.05em;
+}
+.check-list li i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+
+/* --- 11. ANIMATION KEYFRAMES & CLASSES --- */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.fade-in { animation: fadeIn 1s ease-out forwards; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+
+/* --- 12. Media Queries (Responsiveness) --- */
+@media (max-width: 900px) {
+    .contact-grid, .service-layout-grid {
+        grid-template-columns: 1fr; /* Stack form, map, and service blocks vertically */
+    }
+    .map-area {
+        margin-top: 40px;
+    }
+    .hero-content-new h1 {
+        font-size: 3em;
+    }
+    .reverse-grid {
+        grid-template-areas: none; /* Disable grid area logic for mobile stack */
+    }
+}
+@media (max-width: 600px) {
+    header .container {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 10px;
+    }
+    nav ul li {
+        margin: 0 5px;
+    }
+    .primary-btn-sm {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    .hero-content-new h1 {
+        font-size: 2.2em;
+    }
+    .hero-new {
+        height: 60vh;
+    }
+    .service-card {
+        margin-bottom: 20px;
+    }
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-links {
+        margin-top: 10px;
+    }
+}
+/* ADD THIS TO THE END OF YOUR style.css FILE */
+
+/* Logo Sizing */
+.logo {
+    /* This overrides the old text logo style */
+    font-size: 0; 
+    
+}
+.header-logo {
+    height: 80px; /* Adjust this value if the logo is too small or too big */
+    width: auto;
+    display: block;
+    padding-left: 50px;
+}
+/* --- ABOUT PAGE SPECIFIC STYLES --- */
+
+/* Section for Quality and Certification (Section 3 on about.html) */
+.about-quality-grid {
+    display: grid;
+    gap: 40px;
+    align-items: center;
+    grid-template-columns: 1fr 1fr; /* Standard two-column layout */
+}
+
+.quality-text {
+    padding-right: 20px;
+}
+
+.quality-image {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Call to Action Banner */
+.cta-banner {
+    background-color: #2c3e50; /* Dark blue/grey background */
+    color: #ffffff;
+}
+.cta-banner h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS for About Page --- */
+@media (max-width: 992px) {
+    /* Stack the content for smaller screens */
+    .about-quality-grid {
+        grid-template-columns: 1fr;
+    }
+    .quality-text {
+        padding-right: 0;
+    }
+}
+/* --- ABOUT PAGE HEADER FINAL REVISION --- */
+
+/* 1. Add extra padding for vertical space */
+.section-padding.bg-light.text-center {
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+/* 2. Constrain text width for better readability and centering */
+.section-padding.bg-light.text-center .container {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* 3. Style the Main Title */
+.page-title {
+    /* Change color to the deep blue for a professional, sharp look */
+    color: #2c3e50 !important; 
+    font-size: 3.5em; /* Larger and more impactful */
+    font-family: 'Oswald', sans-serif; /* Use the bold Oswald font */
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+/* 4. Style the Subtitle/Mission Statement */
+.subtitle {
+    font-size: 1.3em; /* Make the mission statement stand out */
+    color: #555; 
+    max-width: 700px; /* Constrain subtitle even more */
+    margin: 0 auto;
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 768px) {
+    .section-padding.bg-light.text-center {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .page-title {
+        font-size: 2.2em; /* Ensure it fits nicely on phone screens */
+    }
+    .subtitle {
+        font-size: 1.1em;
+    }
+}
+/* --- ABOUT PAGE SPECIFIC STYLES AND LAYOUT --- */
+
+/* 🛑 HERO BANNER NEW DESIGN */
+.about-hero {
+    /* Set a dark, professional background color */
+    background-color: #2c3e50; 
+    /* Add generous padding for vertical space */
+    padding: 100px 0; 
+}
+
+.about-hero .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-hero .page-title {
+    /* White text for contrast */
+    color: #ffffff !important; 
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.8em; /* Very large and dominant title */
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.about-hero .subtitle {
+    /* Lighter text for secondary information */
+    color: #cccccc; 
+    font-size: 1.3em;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+
+/* Section for Quality and Certification (Interior two-column layout) */
+.about-quality-grid {
+    display: grid;
+    gap: 40px;
+    align-items: center;
+    grid-template-columns: 1fr 1fr; 
+}
+
+.quality-text {
+    padding-right: 20px;
+}
+
+.quality-image {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Call to Action Banner Styling */
+.cta-banner {
+    background-color: #2c3e50; 
+    color: #ffffff;
+}
+.cta-banner h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS for About Page --- */
+@media (max-width: 992px) {
+    /* Stack the quality content for smaller screens */
+    .about-quality-grid {
+        grid-template-columns: 1fr;
+    }
+    .quality-text {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 60px 0;
+    }
+    .about-hero .page-title {
+        font-size: 2.2em; 
+    }
+    .about-hero .subtitle {
+        font-size: 1.1em;
+    }
+}
+/* --- GLOBAL MOBILE RESPONSIVENESS CHECKS (for screens up to 768px wide) --- */
+
+@media (max-width: 768px) {
+    
+    /* Global Section Padding on Mobile */
+    .section-padding {
+        padding: 40px 0;
+    }
+
+    /* Main Navigation (Header) */
+    header .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Stack the main header navigation vertically */
+    header nav ul {
+        flex-direction: column;
+        padding: 10px 0 0;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+    
+    /* Make buttons and text in lists full width on mobile */
+    header nav ul li a.btn {
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+    }
+
+    /* Service and Main Layouts (Stack to one column) */
+    .service-layout-grid,
+    .trust-grid,
+    .about-quality-grid {
+        grid-template-columns: 1fr;
+        gap: 30px; /* Reduce gap on mobile */
+    }
+
+    /* Footer adjustments for better stacking */
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .social-links {
+        margin-top: 15px;
+    }
+    
+    /* Remove padding on text columns that had it for desktop view */
+    .service-text, .quality-text {
+        padding-right: 0;
+    }
+}
+/* --- ESSENTIAL MOBILE FIX FOR SCATTERED NAVIGATION --- */
+@media (max-width: 768px) {
+    /* Force header content to stack vertically */
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Force the navigation links to stack vertically */
+    header nav ul {
+        flex-direction: column;
+        padding: 10px 0 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Give stacked links some vertical space */
+    header nav ul li {
+        margin: 5px 0;
+        width: 100%;
+    }
+    
+    /* Ensure buttons like 'Book a Quote' are centered and full-width */
+    header nav ul li a.btn {
+        width: 90%;
+        margin: 5px auto;
+        display: block;
+        box-sizing: border-box;
+    
+    }
+}
+/* --- BACK TO TOP BUTTON STYLES --- */
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* 20px from the bottom */
+    right: 20px; /* 20px from the right */
+    z-index: 99; /* Make sure it's above other elements */
+    border: none;
+    outline: none;
+    background-color: #ff9800; /* Orange color */
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%; /* Circular shape */
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+#backToTopBtn:hover {
+    background-color: #ffb74d; /* Lighter orange on hover */
+}
+@media (max-width: 768px) {
+    /* This rule forces the stacking */
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    /* This rule forces the navigation links themselves to stack */
+    header nav ul {
+        flex-direction: column;
+        /* ... other styling ... */
+    }
+    /* ... rest of the fixes ... */
+}
+/* --- UNIVERSAL HEADER FIX: Float Menu Right --- */
+
+/* 1. Reset the header container's Flexbox properties for simpler alignment */
+header .container {
+    display: block; /* Change from flex to block */
+    padding: 1px 0;
+    /* Ensure no flex-specific alignment interferes */
+}
+
+/* 2. Style the Logo to float left */
+header .logo {
+    float: left;
+    margin-bottom: 0; /* Clear any previous mobile margins */
+    padding-left: 50px;
+}
+
+/* 3. Style the Navigation to float right */
+header nav {
+    float: right;
+    /* Ensure the navigation doesn't interfere with the logo on smaller screens */
+    width: auto;
+}
+
+/* 4. Ensure the list of links stays horizontal */
+header nav ul {
+    list-style: none;
+    display: flex; /* Keep the links horizontal */
+    padding: 0;
+    margin: 0;
+}
+
+/* 5. Clear the float after the header content */
+header::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* --- Clean up Mobile Layout for Links --- */
+@media (max-width: 768px) {
+    /* If the links overlap the logo on a tiny screen, increase padding/space */
+    header .container {
+        padding: 10px 0;
+    }
+}
+/* --- NEW SERVICE PAGE HERO BANNER STYLE (services-full.html) --- */
+
+.service-hero-banner {
+    /* Set a slightly different dark background from the About page */
+    background-color: var(--dark-bg); 
+    padding: 100px 0; 
+    text-align: center;
+    color: #ffffff;
+}
+
+.service-hero-banner .page-title {
+    color: #ffffff !important; 
+    font-size: 3.5em;
+    margin-bottom: 15px;
+}
+
+.service-hero-banner .subtitle {
+    color: #cccccc; 
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2em;
+}
+/* --- NEW MODERN FEATURE GRID FOR SERVICE HIGHLIGHTS --- */
+.feature-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.feature-card-pro {
+    padding: 30px;
+    border-radius: 8px;
+    background: var(--light-bg);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card-pro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.feature-card-pro i {
+    font-size: 3em;
+    color: var(--primary-color); /* Highlight with bright orange */
+    margin-bottom: 20px;
+    /* Optional: Give the icon background a professional touch */
+    display: inline-block;
+    padding: 15px;
+    border-radius: 50%;
+    background: rgba(255, 152, 0, 0.1); 
+}
+
+.feature-card-pro h4 {
+    color: var(--secondary-color);
+}
+/* --- PRODUCT CARD ANIMATIONS & TRANSITIONS --- */
+
+/* The card itself with a smooth hover transition */
+.feature-card-pro {
+    background: #fff;
+    padding: 0; /* Removing padding so image hits the edges */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    border: 1px solid #eee;
+}
+
+.feature-card-pro:hover {
+    transform: translateY(-15px); /* Lift higher on hover */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Image Container */
+.product-image-box {
+    width: 100%;
+    height: 250px;
+    background: #f9f9f9;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.product-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the inverter image isn't cropped weirdly */
+    padding: 20px;
+    transition: transform 0.5s ease;
+}
+
+.feature-card-pro:hover .product-image-box img {
+    transform: scale(1.1); /* Zoom the product slightly on hover */
+}
+
+/* Product Info Padding */
+.product-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.product-info h4 {
+    font-size: 1.4em;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+/* Scroll Animation Classes */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* --- BACK TO TOP BUTTON --- */
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#backToTopBtn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
