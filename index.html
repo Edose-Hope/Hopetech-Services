@@ -9,32 +9,71 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <div class="top-bar">
+    <div class="container top-bar-content">
+        <div class="contact-info">
+            <a href="tel:+2349055383487"><i class="fas fa-phone-alt"></i> +234 905 538 3487</a>
+            <span class="separator">|</span>
+            <a href="tel:+2347077903564"><i class="fas fa-phone-alt"></i> +234 707 790 3564</a>
+        </div>
+        <div class="top-socials">
+            <a href="mailto:info.hopetechservices@gmail.com"><i class="fas fa-envelope"></i> info.hopetechservices@gmail.com</a>
+        </div>
+    </div>
+</div>
 
     <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="hopetech-logo.png" alt="HOPETECH SERVICES Logo" class="header-logo">
-            </a>
-        </div>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="hopetech-logo.png" alt="HOPETECH SERVICES Logo" class="header-logo">
+                </a>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+    
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services-full.html">Services</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="#contact" class="btn primary-btn-sm">Book a Quote</a></li>
+                    <li><a href="index.html#contact" class="btn primary-btn-sm">Book a Quote</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="home" class="hero-new fade-in">
-        <div class="hero-content-new container">
-            <h1>Sustainable Power. Uncompromising Quality.</h1>
-            <p>Empowering homes and businesses with reliable solar and advanced inverter technology.</p>
-            <a href="#contact" class="btn primary-btn-lg">Start Saving Now</a>
+    <section id="home" class="hero-slider">
+        <div class="slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('inverter-1.jpg');">
+            <div class="hero-content-new container">
+                <div class="glass-box">
+                    <h1>Sustainable Power. Uncompromising Quality.</h1>
+                    <p>Empowering homes and businesses with reliable solar and advanced inverter technology.</p>
+                    <a href="#contact" class="btn primary-btn-lg">Start Saving Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('inverter-2.png');">
+            <div class="hero-content-new container">
+                <div class="glass-box">
+                    <h1>Advanced Inverter Systems.</h1>
+                    <p>High-efficiency power conversion for uninterrupted energy flow.</p>
+                    <a href="services-full.html#inverters" class="btn primary-btn-lg">View Products</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('inverter-3.png');">
+            <div class="hero-content-new container">
+                <div class="glass-box">
+                    <h1>Energy Independence.</h1>
+                    <p>Join thousands of businesses switching to smart sustainable energy.</p>
+                    <a href="#contact" class="btn primary-btn-lg">Get a Quote</a>
+                </div>
+            </div>
         </div>
     </section>
-
     <section class="section-padding bg-light">
         <div class="container">
             <h2 class="section-title">Innovating Your Energy Future</h2>
@@ -42,10 +81,10 @@
             <div class="service-preview-grid">
                 
                 <div class="service-card fade-in-up delay-1">
-                    <img src="residential-solar-panels.jpg" alt="Image of solar panels on a rooftop" class="card-image">
+                    <img src="residential-solar-panels.png" alt="Image of solar panels on a rooftop" class="card-image">
                     <h3>Residential Solar</h3>
                     <p>Lower your electricity bills and increase your property value with a custom home solar system.</p>
-                    <a href="services-full.html#residential" class="text-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="services-full.html#residential" class="text-link">View Our Products <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card fade-in-up delay-2">
@@ -56,19 +95,24 @@
                 </div>
 
                 <div class="service-card fade-in-up delay-3">
-                    <img src="commercial-project.jpg" alt="Image of commercial solar installation" class="card-image">
+                    <img src="commercial-project.png" alt="Image of commercial solar installation" class="card-image">
                     <h3>Commercial Solutions</h3>
                     <p>Reduce operating costs and achieve energy independence for your business with large-scale solar.</p>
-                    <a href="services-full.html#commercial" class="text-link">View Case Studies <i class="fas fa-arrow-right"></i></a>
+                    <a href="services-full.html#commercial" class="text-link">View Our catalog <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding">
-        <div class="container text-center">
-             <h2 class="section-title">Why Choose HOPETECH SERVICES?</h2>
-             <p class="subtitle">Our commitment to quality, reliability, and unparalleled customer service sets us apart.</p>
+    <section id="trust-section" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Why Choose HOPETECH SERVICES?</h2>
+            <p class="subtitle">Our commitment to quality, reliability, and unparalleled customer service sets us apart.</p>
+            
+            <div class="trust-grid">
+                </div>
+        </div>
+    </section>
              <div class="trust-grid">
                 <div class="trust-item fade-in-up delay-1">
                     <i class="fas fa-award"></i>
@@ -89,19 +133,79 @@
         </div>
     </section>
 
-    <section id="contact" class="section-padding bg-dark">
-        <div class="container contact-grid">
-            <div class="contact-form-area fade-in-up">
-                <h2 style="color: #fff;">Get Your Free Solar Quote Today</h2>
-                <form id="quoteForm" action="/process_form.php" method="POST">
-                    <input type="text" id="name" name="name" placeholder="Full Name" required>
-                    <input type="email" id="email" name="email" placeholder="Email Address" required>
-                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-                    <textarea id="message" name="message" placeholder="Address and Project Details" rows="3" required></textarea>
-                    <button type="submit" class="btn primary-btn-lg">Submit Request</button>
-                    <p id="formMessage" style="color: #ff9800; margin-top: 15px; display: none;">Thank you! We will contact you soon.</p>
-                </form>
+    <section id="contact" class="section-padding" style="background-color: #003e6b; padding: 80px 0;">
+        <div class="container">
+            <div class="contact-card-wrapper fade-in-up" style="max-width: 950px; margin: 0 auto; background: #ffffff; border: 1px solid rgba(255,255,255,0.1); display: grid; grid-template-columns: 1.7fr 1fr; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.5);">
+                
+                <div class="contact-form-main" style="padding: 35px; border-right: 1px solid rgba(255,255,255,0.1);">
+                    <div class="form-header" style="margin-bottom: 20px;">
+                        <h3 style="color: #2e4658; font-size: 1.7rem; margin-bottom: 5px; font-family: 'Oswald', sans-serif;">Request Professional Quote</h3>
+                        <p style="font-size: 0.85rem; color: #002a4d;">Briefly tell us your needs for a custom solar solution.</p>
+                    </div>
+    
+                   <form id="pro-contact-form" action="https://formspree.io/f/maqnldrz" method="POST">
+                        <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                        <div class="input-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 12px;">
+                            <div class="input-group">
+                                <label style="color: #00796b; font-size: 0.7rem; text-transform: uppercase; font-weight: 700; margin-bottom: 5px; display: block;"><i class="fas fa-user-circle"></i> Full Name</label>
+                                <input type="text" name="name" placeholder="Enter your name" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #002a4d;">
+                            </div>
+                            <div class="input-group">
+                                <label style="color: #00796b; font-size: 0.7rem; text-transform: uppercase; font-weight: 700; margin-bottom: 5px; display: block;"><i class="fas fa-phone-alt"></i> Phone Number</label>
+                                <input type="tel" name="phone" placeholder="+234" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #002a4d;">
+                            </div>
+                        </div>
+    
+                        <div class="input-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 12px;">
+                            <div class="input-group">
+                                <label style="color: #00796b; font-size: 0.7rem; text-transform: uppercase; font-weight: 700; margin-bottom: 5px; display: block;"><i class="fas fa-envelope"></i> Email</label>
+                                <input type="email" name="email" placeholder="Email@example.com" required style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #002a4d;">
+                            </div>
+                            <div class="input-group">
+                                <label style="color: #00796b; font-size: 0.7rem; text-transform: uppercase; font-weight: 700; margin-bottom: 5px; display: block;"><i class="fas fa-bolt"></i> Project</label>
+                                <select name="project_type" style="width: 100%; padding: 10px; background: #002a4d; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff;">
+                                    <option>Residential Solar</option>
+                                    <option>Commercial/Industrial</option>
+                                    <option>Battery Upgrade</option>
+                                </select>
+                            </div>
+                        </div>
+    
+                        <div class="input-group" style="margin-bottom: 15px;">
+                            <label style="color: #00796b; font-size: 0.7rem; text-transform: uppercase; font-weight: 700; margin-bottom: 5px; display: block;"><i class="fas fa-comment-dots"></i> Message</label>
+                            <textarea name="message" rows="2" placeholder="Describe your power challenges..." style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #002a4d;"></textarea>
+                        </div>
+    
+                        <button type="submit" id="submit-btn" class="btn" style="width: 100%; padding: 15px; background: #ff9800; color: #fff; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; text-transform: uppercase;">
+                            Send Request <i class="fas fa-paper-plane" style="margin-left: 10px;"></i>
+                        </button>
+                    </form>
+                </div>
+    
+                <div class="contact-info-sidebar" style="padding: 35px; background: #003e6b;">
+                    <div class="info-block" style="margin-bottom: 25px;">
+                        <h5 style="color: #ff9800; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; margin-bottom: 10px;">Direct Contact</h5>
+                        <p style="color: #cbd5e0; font-size: 0.9rem; margin: 5px 0;"><i class="fas fa-phone-alt" style="color:#ff9800; margin-right: 10px;"></i> +234 905 538 3487 <br> +234 707 790 3564</p>
+                        <p style="color: #cbd5e0; font-size: 0.9rem; margin: 5px 0;"><i class="fas fa-envelope" style="color:#ff9800; margin-right: 10px;"></i> info.hopetechservices@gmail.com</p>
+                    </div>
+    
+                    <div class="info-block">
+                        <h5 style="color: #ff9800; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; margin-bottom: 10px;">Our Office</h5>
+                        <p style="color: #cbd5e0; font-size: 0.9rem; margin-bottom: 15px;"><i class="fas fa-map-marker-alt" style="color:#ff9800; margin-right: 10px;"></i> Port Harcourt</p>
+                        
+                        <a href="services-full.html" style="text-decoration: none;">
+                            <div class="mini-map" style="height: 100px; border: 1px dashed rgba(255,255,255,0.3); border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); transition: 0.3s;">
+                                <div style="text-align: center;">
+                                    <i class="fas fa-store" style="color: #ff9800; margin-bottom: 5px; font-size: 1.2rem;"></i>
+                                    <p style="color: #fff; font-size: 0.8rem; font-weight: 600;">Visit our showroom &rarr;</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
             
             <div class="map-area fade-in-up delay-1">
                 <h2 style="color: #fff; margin-bottom: 20px;">Find Our Office</h2>
@@ -121,13 +225,40 @@
         </div>
     </section>
 
-    <footer>
+    <footer class="main-footer">
         <div class="container">
-            <p>© 2025 HOPETECH SERVICES. All Rights Reserved. | <a href="about.html">About Us</a> | <a href="services-full.html">Services</a> | <a href="#">Privacy Policy</a></p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/profile.php?id=100093230236997" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <div class="footer-compact-grid">
+                
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links-inline">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services-full.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#contact">Quote</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <p><i class="fas fa-phone-alt"></i> +234 905 538 3487 <br> +234 707 790 3564 </p>
+                    <p><i class="fas fa-envelope"></i> info.hopetechservices@gmail.com</p>
+                </div>
+    
+                <div class="footer-col socials-col">
+                    <h4>Follow Us</h4>
+                          <div class="footer-socials">
+            <a href="https://www.facebook.com/share/1AmU9ChzJa/" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/hopetech_services" class="instagram" title="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/hopetech-services/" class="linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://wa.me/2349055383487" class="whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div> 
+        </div>
+    
+            </div>
+    
+            <div class="footer-copyright">
+                <p>&copy; 2025 HOPETECH SERVICES. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -158,6 +289,37 @@
           document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         }
     </script>
+  <script>
+  var form = document.getElementById("pro-contact-form");
+  
+  async function handleSubmit(event) {
+    event.preventDefault(); // Stops the redirect
+    var data = new FormData(event.target);
+    
+    // This sends the data to Formspree
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+          'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        // This runs if the email was sent successfully
+        alert("Success! Your message has been sent to our team.");
+        form.reset();
+      } else {
+        // This runs if Formspree returns an error
+        alert("Oops! There was a problem. Please check your Formspree ID.");
+      }
+    }).catch(error => {
+      // This runs if there is a connection problem
+      alert("Error: Could not connect to the server.");
+    });
+  }
+
+  form.addEventListener("submit", handleSubmit);
+</script>
     
 </body>
 </html>
