@@ -23,27 +23,27 @@
 </div>
 
     <header>
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="hopetech-logo.png" alt="HOPETECH SERVICES Logo" class="header-logo">
-                </a>
-            </div>
-            
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-    
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services-full.html">Services</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="index.html#contact" class="btn primary-btn-sm">Book a Quote</a></li>
-                </ul>
-            </nav>
+    <div class="container header-flex">
+        <div class="logo">
+            <a href="index.html">
+                <img src="hopetech-logo.png" alt="HOPETECH SERVICES Logo" class="header-logo">
+            </a>
         </div>
-    </header>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services-full.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="index.html#contact" class="btn primary-btn-sm">Book a Quote</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <section id="home" class="hero-slider">
         <div class="slide active" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('inverter-1.jpg');">
@@ -319,6 +319,29 @@
   }
 
   form.addEventListener("submit", handleSubmit);
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            // Toggles the "active" class which we styled in CSS
+            navMenu.classList.toggle('active');
+            
+            // Optional: Change icon from bars to X when open
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    }
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+});
 </script>
     
 </body>

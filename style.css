@@ -1966,3 +1966,88 @@ header {
     font-size: 0.78rem !important; /* Makes the technical specs smaller and cleaner */
     color: #666;                   /* Dark grey for better readability */
 }
+/* --- Desktop Helpers --- */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+/* --- Mobile Responsiveness (Screen sizes less than 768px) --- */
+@media (max-width: 768px) {
+    /* Menu Toggle Styling */
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #00796b;
+    }
+
+    /* Hide Nav by default on mobile and position it */
+    nav {
+        display: none; /* Hidden until 'active' class is added */
+        position: absolute;
+        top: 70px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    /* Show Nav when active */
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    /* Hero Section adjustments */
+    .glass-box h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Contact Form - Stack the columns */
+    .contact-card-wrapper {
+        grid-template-columns: 1fr !important; /* Forces 1 column */
+    }
+
+    .contact-form-main {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .input-row {
+        grid-template-columns: 1fr !important; /* Stack inputs inside the form */
+    }
+    
+    .top-bar-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+/* Default state for Desktop: Hide toggle */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+    nav {
+        display: block !important;
+    }
+    nav ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+    }
+}
