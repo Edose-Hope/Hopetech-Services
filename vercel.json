@@ -8,7 +8,9 @@
       "src": "/(.*)",
       "headers": {
         "X-Content-Type-Options": "nosniff",
-        "Referrer-Policy": "strict-origin-when-cross-origin"
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+        "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://training.hopetechservices.com.ng; connect-src 'self' https://formspree.io https://training.hopetechservices.com.ng; frame-src https://www.google.com; frame-ancestors 'self' https://training.hopetechservices.com.ng; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io"
       },
       "continue": true
     },
@@ -50,6 +52,21 @@
         "Location": "https://energy.hopetechservices.com.ng/$1"
       },
       "status": 308
+    },
+    {
+      "src": "^/admin(?:\\.html)?/?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "energy.hopetechservices.com.ng"
+        }
+      ],
+      "headers": {
+        "Location": "https://training.hopetechservices.com.ng/admin",
+        "X-Robots-Tag": "noindex, nofollow, noarchive",
+        "Cache-Control": "no-store"
+      },
+      "status": 307
     },
     {
       "src": "^/$",

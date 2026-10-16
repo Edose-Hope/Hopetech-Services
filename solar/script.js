@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.1});
  items.forEach(item=>observer.observe(item));
  const slides=document.querySelectorAll('.slide');let current=0;
- if(slides.length>1&&!reduced)setInterval(()=>{slides[current].classList.remove('active');current=(current+1)%slides.length;slides[current].classList.add('active');},5000);
+ if(slides.length>1&&!reduced&&!new URLSearchParams(location.search).has('energy_preview'))setInterval(()=>{const visible=[...slides].filter(v=>!v.hidden);if(!visible.length)return;slides.forEach(v=>v.classList.remove('active'));current=(current+1)%visible.length;visible[current].classList.add('active');},5000);
  const toggle=document.querySelector('#mobile-menu'),nav=document.querySelector('#nav-menu');
  if(toggle&&nav){
   toggle.setAttribute('role','button');toggle.setAttribute('tabindex','0');toggle.setAttribute('aria-label','Toggle navigation');toggle.setAttribute('aria-controls','nav-menu');toggle.setAttribute('aria-expanded','false');
