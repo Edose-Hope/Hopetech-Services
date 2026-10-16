@@ -1,0 +1,8 @@
+.git/
+dist/
+node_modules/
+PHPMailer/
+solar/PHPMailer/
+*.php
+solar/*.php
+CORPORATE-MIGRATION.md

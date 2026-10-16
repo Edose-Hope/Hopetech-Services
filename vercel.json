@@ -1,0 +1,78 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "node scripts/build-site.mjs",
+  "outputDirectory": "dist",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      },
+      "continue": true
+    },
+    {
+      "src": "^/(.*)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "solar.hopetechservices.com.ng"
+        }
+      ],
+      "headers": {
+        "Location": "https://energy.hopetechservices.com.ng/$1"
+      },
+      "status": 308
+    },
+    {
+      "src": "^/(about|services-full|thanks)\\.html$",
+      "has": [
+        {
+          "type": "host",
+          "value": "hopetechservices.com.ng"
+        }
+      ],
+      "headers": {
+        "Location": "https://energy.hopetechservices.com.ng/$1.html"
+      },
+      "status": 308
+    },
+    {
+      "src": "^/solar(?:/(.*))?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "hopetechservices.com.ng"
+        }
+      ],
+      "headers": {
+        "Location": "https://energy.hopetechservices.com.ng/$1"
+      },
+      "status": 308
+    },
+    {
+      "src": "^/$",
+      "has": [
+        {
+          "type": "host",
+          "value": "energy.hopetechservices.com.ng"
+        }
+      ],
+      "dest": "/solar/index.html"
+    },
+    {
+      "src": "^/(.*)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "energy.hopetechservices.com.ng"
+        }
+      ],
+      "dest": "/solar/$1"
+    },
+    {
+      "handle": "filesystem"
+    }
+  ]
+}

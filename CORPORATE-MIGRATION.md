@@ -1,47 +1,45 @@
-# Hopetech corporate and solar website transition
+# Corporate and solar websites on Vercel
 
-Prepared structure:
+The main company website and the solar division share the existing **Hopetech-Services** Vercel project. Training stays in its independent **hopetech-training** project and database.
 
-- `corporate/`: new company homepage, stylesheet, script, local fonts and assets.
-- `solar/`: a copy of the existing solar website, including images, products and the existing Formspree contact form. Canonicals and sitemap use `https://solar.hopetechservices.com.ng`. Solar navigation links back to the corporate website.
-- Existing root solar files are deliberately unchanged until hosting and domain routing are confirmed.
-- Training remains its independent, working Vercel project at `https://training.hopetechservices.com.ng`. No training application or database files were changed by this work.
+| Domain | Content |
+| --- | --- |
+| `hopetechservices.com.ng` | New corporate homepage introducing both businesses |
+| `energy.hopetechservices.com.ng` | Existing solar website, products and enquiry form |
+| `training.hopetechservices.com.ng` | Existing training site and admin content editor |
 
-## Confirm the hosting first
+## Build and routing
 
-Whogohost may be only the domain registrar. Check the active services in the Whogohost client area. If hosting is listed, open cPanel → File Manager and find the document root for `hopetechservices.com.ng`. Confirm that its `index.html` is the current solar website before uploading anything. If only a domain is listed, identify the host from the DNS records and hosting account before proceeding. Do not change nameservers or the existing training CNAME.
+Run `node scripts/build-site.mjs`. It creates a static `dist/` with the corporate homepage, its assets, the solar site and the existing Google ownership verification file. PHP source, PHPMailer, Git metadata and migration documentation are excluded from the public output. Solar enquiries continue to use the existing Formspree endpoint; no new form service is introduced.
 
-## cPanel cutover, if this is the confirmed live host
+`vercel.json` declares the build command and output directory. Its domain routes run **before** the filesystem: requests to the solar hostname are served from `dist/solar/`, and the main hostname uses the corporate `dist/index.html`. This order matters: filesystem-first rewrites would serve the corporate homepage on both hostnames.
 
-1. Download a backup of the complete live document root and save it outside any publicly accessible directory. Preserve the existing `.htaccess`, ownership-verification files, mail configuration and other unrelated files.
-2. In cPanel → Domains, create `solar.hopetechservices.com.ng` with a separate document root, typically `public_html/solar`. Do not share the main domain's document root. Confirm the actual path displayed by cPanel.
-3. Extract the contents of the solar upload archive into that document root. The archive contains `index.html` directly; do not accidentally create an extra nested `solar` directory.
-4. Check the authoritative DNS zone. If cPanel has not created the subdomain record there, add the record supplied by the confirmed web host. For cPanel hosting this is commonly an A record named `solar` pointing to that account's actual server IP. Use the IP shown by the host, not an assumed Vercel address. Leave root, email and training records alone.
-5. Run/allow AutoSSL for the new solar domain. Check HTTPS, navigation, product images and the contact form on `https://solar.hopetechservices.com.ng/`. Submit a form only when the owner wants a real enquiry sent.
-6. Only after the solar subdomain works, extract the corporate upload archive into the main domain's document root. Its files replace the root `index.html` and add `corporate.css`, `corporate.js` and `assets/`. Back up any colliding `assets` directory first and merge rather than delete unrelated files. Check DirectoryIndex if an older `index.php` would take precedence.
-7. Confirm main-domain navigation reaches the solar subdomain and the existing training subdomain. Confirm mail links, phone links, mobile menu, logo and favicon. Purge the hosting cache if necessary.
-8. Redirect old solar page URLs after the move. Merge these rules into the existing root `.htaccess` in the appropriate place; do not overwrite the entire file:
+The corporate homepage links directly to the solar and training domains. Solar navigation links back to the corporate website. Legacy main-domain solar page URLs (`about.html`, `services-full.html`, `thanks.html`) redirect to equivalent pages on the solar domain. Solar canonicals and its sitemap use the solar domain; the corporate sitemap lists the main homepage.
 
-```apache
-RewriteEngine On
-RewriteCond %{HTTP_HOST} ^(www\.)?hopetechservices\.com\.ng$ [NC]
-RewriteRule ^(about\.html|services-full\.html|thanks\.html)$ https://solar.hopetechservices.com.ng/$1 [R=301,L]
-```
+The root source solar files remain in Git for preservation. Vercel serves only the explicit build output, so the old root source `index.html` is not the deployed main homepage.
 
-The new main-domain sitemap lists the corporate homepage. The solar sitemap lists solar pages. Keep the existing Google ownership-verification file at the main domain.
+## Domains and DNS
 
-## If the host is Vercel or another service
+The user connected `solar.hopetechservices.com.ng`, then chose `energy.hopetechservices.com.ng` as the final address. Before deploying this cutover, add the energy domain to Production on the same Vercel project, create its CNAME in Whogohost using the exact value Vercel provides, and confirm **Valid Configuration** and HTTPS. Keep root, email and training records as configured. The prepared cutover redirects the older solar hostname to energy, preserving paths. Do not activate this redirect before the energy domain works.
 
-Do not follow cPanel upload steps. Configure a separate solar project/domain (or host-based routing), deploy the solar directory there, verify its domain and certificate, and then deploy the corporate directory for the main domain. The same solar-first order applies. Use the exact DNS values given by that host.
+Pushing this configuration triggers the existing Vercel production deployment. Verify that the deployment for the new commit is **Ready**, then check:
 
-## Rollback
+1. Main domain: corporate homepage, both business links, logo and mobile menu.
+2. Solar domain: solar homepage, products, images, navigation and enquiry form.
+3. Training domain: existing site, registration and admin editor.
+4. Main-domain `/services-full.html`: redirect to the solar domain.
+5. Both domains: HTTPS and appropriate canonical/sitemap URLs.
 
-Restore the backed-up main document root if the corporate cutover fails. Leave the working training CNAME unchanged. The original root solar files remain in Git as a second source of the original site, but the live backup is authoritative if it contains changes not committed here.
-
-## Editing
-
-This corporate homepage is a static website. The existing training dashboard edits the training website only; it does not edit these corporate or solar files.
+The Vercel alias `hopetech-services.vercel.app` serves the corporate homepage by default. The solar domain is not redirected to the corporate domain.
 
 ## Local verification
 
-From this repository, `python -m http.server 8091 --bind 127.0.0.1` serves `/corporate/` and `/solar/` for development. The corporate preview intentionally links to `/solar/` on the same host. The production corporate archive sets `data-solar-url="https://solar.hopetechservices.com.ng/"` and uses that live subdomain in all solar links. No localhost preview URLs should be shared with the owner.
+Use `node scripts/build-site.mjs` to verify the production static output. A basic file server previews `dist/`, but does not reproduce domain routing. Domain-routing checks must send the correct host header and evaluate the declared Vercel routes before resolving the files.
+
+The corporate layout was checked at desktop, tablet and mobile widths. Browser checks covered images, mobile menu and navigation between the corporate and solar sites. The solar form was checked using an intercepted Formspree response; no real enquiry was sent. These local checks do not independently verify production deployment or certificates.
+
+## Editing and rollback
+
+The training admin dashboard edits training content only. Corporate and solar content live in this repository.
+
+For rollback, use Vercel's previous production deployment or revert the cutover configuration. The original root solar files remain unchanged. Do not remove the working training domain or change its CNAME while rolling back this project.

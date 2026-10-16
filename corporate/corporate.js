@@ -5,7 +5,7 @@
  nav.addEventListener('click',event=>{if(event.target.closest('a'))close();});
  document.addEventListener('keydown',event=>{if(event.key==='Escape'){close();toggle.focus();}});
  document.querySelector('#year').textContent=new Date().getFullYear();
- // Until the solar subdomain has DNS and HTTPS, the preserved site remains available on this host.
- const solarBase=document.documentElement.dataset.solarUrl||'/solar/';
+ // The solar and corporate domains share a deployment, with separate page routing.
+ const solarBase=document.documentElement.dataset.solarUrl||'https://energy.hopetechservices.com.ng/';
  document.querySelectorAll('[data-solar-link]').forEach(a=>{const hash=new URL(a.href).hash;a.href=solarBase+hash;});
 })();

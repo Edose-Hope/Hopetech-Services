@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://solar.hopetechservices.com.ng/sitemap.xml
+Sitemap: https://energy.hopetechservices.com.ng/sitemap.xml
