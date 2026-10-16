@@ -1,3 +1,9 @@
+# Temporary coming-soon mode
+
+The owner requested that the main corporate website remain unpublished. The build now publishes `corporate/coming-soon.html` as the main homepage and excludes the full corporate homepage, scripts and stylesheet from the public output. The full corporate source remains in Git for future launch. The coming-soon page links only to the energy business and the company email; it has no training link. It requests noindex through its own metadata, without applying that instruction to energy. The energy hostname routing is unchanged. `/corporate/` and `/corporate/index.html` temporarily redirect to the coming-soon homepage. To launch the full corporate site later, explicitly change the build output and remove the temporary redirect.
+
+The remaining notes describe the prepared corporate/energy structure.
+
 # Corporate and solar websites on Vercel
 
 The main company website and the solar division share the existing **Hopetech-Services** Vercel project. Training stays in its independent **hopetech-training** project and database.

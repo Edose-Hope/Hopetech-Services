@@ -72,6 +72,13 @@
       "dest": "/solar/$1"
     },
     {
+      "src": "^/corporate(?:/index\\.html|/)?$",
+      "headers": {
+        "Location": "/"
+      },
+      "status": 307
+    },
+    {
       "handle": "filesystem"
     }
   ]
