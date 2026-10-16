@@ -2051,3 +2051,7 @@ header {
         list-style: none;
     }
 }
+
+/* One consistent navigation across all energy pages. */
+.energy-header .header-flex{display:flex;align-items:center;justify-content:space-between;gap:24px}.energy-header .logo{float:none;margin:0;padding:0}.energy-header .logo a{display:block}.energy-header .header-logo{width:210px;max-width:100%;height:auto}.energy-header #nav-menu ul{align-items:center}.energy-header #nav-menu a[aria-current=page]{color:#ef8500}.energy-header button.menu-toggle{background:none;border:0;padding:8px;line-height:1;color:#211f5b}.energy-header #nav-menu .primary-btn-sm{white-space:nowrap}
+@media(max-width:768px){.energy-header .header-logo{width:175px}.energy-header #nav-menu{height:auto;right:auto;left:0;width:100%;top:100%;padding:8px 0}.energy-header{position:relative}.energy-header #nav-menu ul{margin:0;padding:10px 20px;gap:0}.energy-header #nav-menu li{margin:8px 0}.energy-header .header-flex{padding:10px 20px}.energy-header .menu-toggle{display:block}}

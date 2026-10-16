@@ -6,13 +6,13 @@
     <title>Inverter Products | HOPETECH SERVICES</title>
     <meta name="description" content="Explore the Hopetech Services catalogue of inverters, solar panels, and battery storage solutions.">
     <link rel="canonical" href="https://energy.hopetechservices.com.ng/services-full.html">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=nav-2">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/png" href="favicon.png?v=hs-logo-1">
     <link rel="apple-touch-icon" href="favicon.png?v=hs-logo-1">
-</head>
-<script src="script.js?v=corporate-move-1"></script>
+<script src="script.js?v=nav-2" defer></script></head>
+
 <body>
 <div class="top-bar">
     <div class="container top-bar-content">
@@ -26,23 +26,7 @@
         </div>
     </div>
 </div>
-    <header>
-        <div class="container custom-header-2line">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="hopetech-logo.png" alt="HOPETECH SERVICES Logo" class="header-logo">
-                </a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services-full.html" class="active">Services</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="index.html#contact" class="btn primary-btn-sm">Book a Quote</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <header class="energy-header"><div class="container header-flex"><div class="logo"><a href="index.html"><img src="hopetech-logo.png" alt="Hopetech Services" class="header-logo"></a></div><button type="button" class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="nav-menu" aria-label="Main navigation"><ul><li><a href="index.html">Home</a></li><li><a href="services-full.html" aria-current="page">Services</a></li><li><a href="about.html">About Us</a></li><li><a href="index.html#contact" class="btn primary-btn-sm">Book a Quote</a></li></ul></nav></div></header>
 
     <section class="service-hero-banner">
         <div class="container">
@@ -346,24 +330,8 @@
         </div>
     </footer>
 
-    <script>
-        const observerOptions = {
-            threshold: 0.1
-        };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-up').forEach((el) => {
-            observer.observe(el);
-        });
-    </script>
-    <button onclick="topFunction()" id="backToTopBtn" title="Go to top">
+    <button id="backToTopBtn" title="Go to top">
     <i class="fas fa-arrow-up"></i>
 </button>
 </body>

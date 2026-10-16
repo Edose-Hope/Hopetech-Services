@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   nav.addEventListener('click',event=>{if(event.target.closest('a'))close();});
   document.addEventListener('keydown',event=>{if(event.key==='Escape')close();});
  }
- const top=document.querySelector('#backToTopBtn');if(top){const scroll=()=>{top.style.display=scrollY>300?'block':'none';};addEventListener('scroll',scroll,{passive:true});scroll();}
+ const top=document.querySelector('#backToTopBtn');if(top){top.addEventListener('click',window.topFunction);const scroll=()=>{top.style.display=scrollY>300?'block':'none';};addEventListener('scroll',scroll,{passive:true});scroll();}
  const form=document.querySelector('#pro-contact-form');
  if(form){
   const button=form.querySelector('[type=submit]'),status=document.querySelector('#form-status');

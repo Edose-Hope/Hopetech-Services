@@ -6,12 +6,12 @@
     <title>About Us | HOPETECH SERVICES</title>
     <meta name="description" content="Learn about Hopetech Services and our approach to solar energy, inverter systems, and sustainable power solutions.">
     <link rel="canonical" href="https://energy.hopetechservices.com.ng/about.html">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=nav-2">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/png" href="favicon.png?v=hs-logo-1">
     <link rel="apple-touch-icon" href="favicon.png?v=hs-logo-1">
-</head>
+<script src="script.js?v=nav-2" defer></script></head>
 <body>
      <div class="top-bar">
     <div class="container top-bar-content">
@@ -26,22 +26,7 @@
     </div>
 </div>
 
-    <header>
-        <div class="container">
-            <div class="logo">
-            <a href="index.html">
-                <img src="hopetech-logo.png" alt="HOPETECH SERVICES Logo" class="header-logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services-full.html">Services</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li>
-                    <li><a href="index.html#contact" class="btn primary-btn-sm">Book a Quote</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <header class="energy-header"><div class="container header-flex"><div class="logo"><a href="index.html"><img src="hopetech-logo.png" alt="Hopetech Services" class="header-logo"></a></div><button type="button" class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><nav id="nav-menu" aria-label="Main navigation"><ul><li><a href="index.html">Home</a></li><li><a href="services-full.html">Services</a></li><li><a href="about.html" aria-current="page">About Us</a></li><li><a href="index.html#contact" class="btn primary-btn-sm">Book a Quote</a></li></ul></nav></div></header>
 
     <section class="about-hero section-padding text-center">
         <div class="container">
@@ -150,31 +135,11 @@
             </div>
         </div>
     </footer>
-<button onclick="topFunction()" id="backToTopBtn" title="Go to top">
+<button id="backToTopBtn" title="Go to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script>
-        // Get the button
-        let mybutton = document.getElementById("backToTopBtn");
 
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            mybutton.style.display = "block";
-          } else {
-            mybutton.style.display = "none";
-          }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-          document.body.scrollTop = 0; // For Safari
-          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        }
-    </script>
 
 </body>
 </html>
