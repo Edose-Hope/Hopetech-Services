@@ -28,7 +28,7 @@
       "status": 308
     },
     {
-      "src": "^/(about|services-full|thanks)\\.html$",
+      "src": "^/(about|services-full|thanks)(?:\\.html)?/?$",
       "has": [
         {
           "type": "host",
@@ -36,7 +36,7 @@
         }
       ],
       "headers": {
-        "Location": "https://energy.hopetechservices.com.ng/$1.html"
+        "Location": "https://energy.hopetechservices.com.ng/$1"
       },
       "status": 308
     },
@@ -69,6 +69,42 @@
       "status": 307
     },
     {
+      "src": "^/(about|services-full|thanks)(?:\\.html|/)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "energy.hopetechservices.com.ng"
+        }
+      ],
+      "headers": {
+        "Location": "/$1"
+      },
+      "status": 308
+    },
+    {
+      "src": "^/index(?:\\.html)?/?$",
+      "has": [
+        {
+          "type": "host",
+          "value": "energy.hopetechservices.com.ng"
+        }
+      ],
+      "headers": {
+        "Location": "/"
+      },
+      "status": 308
+    },
+    {
+      "src": "^/(about|services-full|thanks)$",
+      "has": [
+        {
+          "type": "host",
+          "value": "energy.hopetechservices.com.ng"
+        }
+      ],
+      "dest": "/solar/$1.html"
+    },
+    {
       "src": "^/$",
       "has": [
         {
@@ -94,6 +130,13 @@
         "Location": "/"
       },
       "status": 307
+    },
+    {
+      "src": "^/index(?:\\.html)?/?$",
+      "headers": {
+        "Location": "/"
+      },
+      "status": 308
     },
     {
       "handle": "filesystem"
